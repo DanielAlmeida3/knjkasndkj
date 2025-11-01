@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flash Packs - Área do Cliente</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczPqUSuhBJ8SW2a8YfBQABxNqvDqdPTqkwKY2qu8Kz9a1p0gOSZyvViuzTP_p5f8plB_fw3rjYnW8R3RX7DgZmQy-jIVMrs30M31zAS_bceHirYJEmtBYic9bg6ZQA0nF-mguzXpWIoQxgukquDr54fn=w1910-h636-s-no-gm?authuser=0" alt="Flash Packs Logo" class="logo-img">
+            </h1> 
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="contato.html">Suporte</a></li>
+                    <li><a href="#" id="btn-logout" class="btn-primary">Sair</a></li> 
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="form-page-container">
+        <h2>Área do Cliente: Cadastro</h2>
+        <p>Gerencie seus motoristas e veículos de forma rápida.</p>
+
+        <div class="tabs">
+            <button class="tab-button active" onclick="openTab(event, 'transportes')">Cadastrar Transporte</button>
+            <button class="tab-button" onclick="openTab(event, 'funcionarios')">Cadastrar Funcionário</button>
+        </div>
+
+        <div id="transportes" class="tab-content active">
+            <form id="form-transporte"> 
+                <input type="text" id="placa" placeholder="Placa do Veículo (ex: ABC-1234)" required>
+                <input type="text" id="modelo" placeholder="Marca e Modelo (ex: Iveco Daily)" required>
+                <select id="tipo-transporte" required>
+                    <option value="">Tipo de Transporte</option>
+                    <option value="Caminhão">Caminhão</option>
+                    <option value="Utilitário/Van">Utilitário/Van</option>
+                    <option value="Moto">Moto</option>
+                    <option value="Carro">Carro</option>
+                </select>
+                <input type="text" id="chassi" placeholder="Número de Chassi (Opcional)">
+                <button type="submit" class="btn-form-submit">Registrar Transporte</button>
+            </form>
+        </div>
+
+        <div id="funcionarios" class="tab-content">
+            <form id="form-funcionario"> 
+                <input type="text" id="nome-motorista" placeholder="Nome Completo do Motorista" required>
+                <input type="text" id="cpf-registro" placeholder="CPF/Registro" required>
+                <input type="tel" id="telefone" placeholder="Telefone de Contato" required>
+                <select id="cargo" required>
+                    <option value="">Cargo</option>
+                    <option value="Motorista">Motorista</option>
+                    <option value="Ajudante de Carga">Ajudante de Carga</option>
+                    <option value="Administrador de Frota">Administrador de Frota</option>
+                </select>
+                <button type="submit" class="btn-form-submit">Registrar Funcionário</button>
+            </form>
+        </div>
+        
+        <hr style="margin: 40px auto; border-color: #dcdcdc;">
+        <h3 style="color: var(--primary-color); margin-bottom: 25px;">Cadastros Registrados (Seus Dados)</h3>
+        <div id="lista-cadastros">
+            <p>Carregando cadastros...</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Flash Packs. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
